@@ -1,0 +1,119 @@
+Git --version
+Git config --global user.name "tuyen"
+Git config --global user.email "tdtuyen.86@gmail.com"
+Git config --list
+Git config user.name
+Git status -s
+Git status --short
+Git diff --staged
+Git diff
+Git add .
+Git commit -m 
+Git log --stat
+Git log --patch
+Git mv : đổi tên file
+Git reset --soft HEAD
+Git reset --mixed HEAD
+Git reset --hard HEAD
+
+
+Four areas: stash working directory index repository
+Git reset HEAD
+Git stash --include-untracked
+Git stash list
+Git stash apply
+Git stash clear
+
+Git diff 
+Git diff --cached
+Git diff file1 file2
+Git diff commit1 commit2
+Git diff branch1 branch2
+
+HEAD HEAD~2 HEAD^2
+
+Git log --graph --decorate --online
+
+Git commit --amend
+Git rebase -I
+Git reflog
+Git filter-repo
+Git revert
+
+
+Making Sence of Git
+A Few Reasons to Like Git
+Fast
+Smart
+Flexible
+Safe
+Client server version control
+A few reasons to dislike git
+Git has not access control 
+Git is too heavy
+Not ideal for binary files
+Not user-friendly
+
+Git is hard to learn but easy to use
+
+========Delete local branch================
+Git branch -D delete_branch
+
+========Delete remote branch================
+Git push origin --delete remote_delete_branch
+
+git merge login --no-ff -->non-fast-forward
+git merge branch --> fast-forward
+
+==============================
+//MERGE FAST-FORWARD
+==============================
+git checkout -b feature develop
+git add .
+git commit -m "Add feature"
+
+git checkout develop
+git pull origin develop
+git merge feature
+
+giai quyet xung dot ---> git add and git commit
+
+Resolve conflic --> git add --> git merge --continue || git merge --abort
+
+==============================
+REBASE
+==============================
+git checkout -b feature develop
+git add .
+git commit -m "Add feature"
+
+git checkout develop
+git pull origin develop
+
+git checkout feature
+
+git rebase develop
+
+giai quyet xung dot : git rebase --continue
+hoac la git rebase --abort huy bo dua nhanh feature ve trang thai ban dau
+
+======================
+git reset: xoa commit va tro ve trang thai ban dau
+git revert: tao ra commit moi giong trang thai muon tro ve
+
+test vim
+insert continue 
+test vim
+insert continue 
+git checkout develop
+git pull origin develop
+
+git checkout feature
+
+git rebase develop
+
+Git config --list
+Git config user.name
+
+========Bỏ hỏi pass của SSH key=========
+ssh-add -K ~/.ssh/id_rsa

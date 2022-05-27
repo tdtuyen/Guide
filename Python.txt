@@ -1,0 +1,51 @@
+Tao project tren Pycharm: Pycharm tự tạo môi trường env cho ứng dụng
+# Install the lastest Django relesea
+python -m pip install django
+# Start the project
+django-admin startproject meeting_planner
+# Move into the project directory
+cd meeting_planner
+# Run the developmnent server
+python manage.py runserver
+ctrl c to stop server 
+# create app (component)
+python manage.py startapp website
+Dang ky app trong setting.py
+tao view va dang ky trong urls
+
+python manage.py showmigrations
+python manage.py migrate
+python manage.py dbshell 
+
+tao class trong models.py
+roi chay lenh python manage.py makemigrations
+python manage.py migrite
+
+vao file admin resgiter 
+python manage.py createsuperuser
+admin pass admin
+
+cd web
+yarn
+
+
+cd docker
+./exec build
+
+vào folder docker/ssl install file localca.pem
+
+
+127.0.0.1       kepler.test vào /etc/hosts
+
+cd api
+./exec manage.py collectstatic
+./exec manage.py migrate
+
+
+chạy API: vào folder docker chạy: ./exec bserver
+
+chạy client: vào folder web chạy: yarn dev
+
+http://kepler.test:81/#/ frondend
+
+http://kepler.test:81/admin/

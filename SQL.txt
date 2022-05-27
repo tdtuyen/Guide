@@ -1,0 +1,233 @@
+SQL-structures Query Language is a specical-purpose programming language.
+Ngôn ngữ truy vấn có cấu trúc được sử dụng để thao tác với cơ sở dữ liệu quan hệ.
+
+Cơ sở dữ liệu quan hệ:
+Là cơ sở dữ liệu được xây dựng dựa trên mô hình dữ liệu quan hệ.
+Dữ liệu được tổ chức trong các bảng.
+Các bảng bao gồm cột và dòng.
+Cột còn được gọi là thuộc tính hoặc trường.
+Dòng còn được gọi là bản ghi hoặc hàng.
+
+Hệ quản trị cơ sở dữ liêụ( Database Management System) là một ứng dụng máy tính được sử dụng để quản lý cơ sở dữ liệu.
+Ở đây mình học về MySQL. MySQL là một hệ quản trị cơ sở dữ liêụ mã nguồn mở.
+
+Cú pháp sử dụng các câu lệnh trong MYSQL
+Lấy dữ liệu
+SELECT column1, 2 ... FROM table_name WHERE condition ORDER BY column DESC, LIMIT 10
+Sửa dữ liệu
+INSERT, UPDATE, DELETE...
+
+
+
+A relational database consists of tables
+A table consists of rows and columns
+The intersection of rows and columns is called cell
+Primary keys uniquely identifies each row of the table
+Foreign key enforces referential integrity
+Defining datatype of the columns is one of the most crucial task of database modeling
+
+Data retrieval techniques:
+Select clause - columns list in the resultset
+From clause - table names from which the query retrieves the data
+Where clause - conditions to match for rows to qualify for reseltset
+Order by clause - sort order and sequence for resultset
+Limit clause - number of rows resultset returns and offset
+
+Data modofication techniques
+Use select statement in subquery when inserting, updating or deleting multiple rows at the same time
+Do not forgot to specify where clause in delete or update statement or it will modify your entire table
+
+
+Use column name in select statement	
+Use aliases improves readability
+Use various comparison and logical operator in where clause to retrieve rows relevant to application
+Use order by clause if you want your result ordered
+
+JOINTS, UNIONS AND SUBQUERY
+
+Câu lệnh JOIN dùng để truy vấn dữ liệu kết hợp từ nhiều bảng.
+INNER JOIN chỉ trả về các bản ghi có ở 2 bảng.
+LEFT JOIN trả về tất cả bản ghi có mặt ở bảng bên trái và bản ghi tương ứng ở bên phải
+RIGHT JOIN trả về tất cả bản ghi có mặt ở bảng bên phải và bản ghi tương ứng có mặt ở bảng bên trái
+FULL JOINT trả về tất cả bản ghi có ở 2 bảng 
+
+An SQL JOIN combines columns from two or more table in a single result set.
+Always alias your column with table to avoid ambiguity in the code.
+UNIOn keyword removes duplicate from resultset but UNION ALL keyword does not.
+A correlated subquery is executed once for each row in the main query.
+
+FUNCTIONS
+
+SQL cung cấp một số hàm để thao tác với dữ liệu:
+Các hàm làm việc với chuỗi, số, ngày tháng, hàm thông tin ...
+
+A function is a special type of command word in the SQL command set that returns a single value.
+Functions:
+- String functions
+- Numeric functions
+- Date/Time functions
+- Control Flow Functions
+- Cast Functions
+- Information functions
+- Miscellaneous Functions
+
+Aggregate Functions/ Column Functions
+Stored Functions/ User Defined Functions
+
+Scalar function operates on a single value and return a single value.
+-String functions: CHAR(); CONCAT();...
+-Numeric functions: ABS(); DIV();ACOS():....
+-Date/time functions: DATE(); DAY(); CURDATE(); 
+
+Control FLow Functions returns value based on each row processed by the query executed.
+CASE; IF(); IFNULL(); NULLIF();
+
+The CAST function takes an expression of any type and produces a result value of a specific type.
+CAST(); CONVERT();
+
+This information functions provides us various in information about user, database and server;
+CHARSET(); DATABASE(); BENCHMARK();	 
+
+An aggregate function operates on a series of values and returns a single value.
+SUM, MIN, MAX, COUNT
+
+Summary Query is a query with multiple aggregation functions. 
+
+MYSQL VIEWS
+A view is commonly known as a virtual table
+A view is a virtual table base on the result set go the SQL statement
+A view consists of a select statement that is stored as an object in the database
+The table referenced in the views are known as a base table
+Technically view do not store any data. The data are retrieved at run time from the base tables;
+
+Một view là một bảng ảo được tạo ra từ tập hợp các cột cảu một hoặc nhiều bảng.
+Một view có thể bao gồm các cột của một view khác.
+Dữ liệu trong view được tập hợp từ các bảng cơ sở tham chiếu đến khi định nghĩa view.
+
+Ưu điểm của view:
+Đơn giản hoá câu truy vấn
+Bảo mật dữ liệu: hạn chế quyền truy cập dữ liệu bằng cách sử dụng select với mệnh đề where
+Tuỳ biến các hiện thị dữ liệu
+Kết hợp dữ liệu từ các bảng hay các view
+Các thao tác trên bản ghi: insert, update, delete
+View không thể update được nếu chứa các hàm: sum, min, mã, count, các mệnh đề distinct, having, union hoặc union all, subquery có chứa join
+
+
+
+Advantages of view:
+Simplified queries;
+Data security: restrict access to data by using select statement with where clause
+DML Operation Over Data: update, insert and delete data from base table
+The view is not updatable if it contains any of the following:
+Aggregate functions sum, min, max, count and so forth distinct, group by, having, union or union all, subquery in the select list
+Certain joins
+
+
+STORAGED PROCEDURES AND STORAGED FUNCTIONS
+A stored procedure is a subroutine available to applications that access a relational database system.
+A stored procedure contains one or more SQL statements stored in the database.
+Advantages of procedures: overhead, avoidance of network traffic, encapsulation of business logic
+
+Thủ tục là tập hợp các câu lệnh SQL được xem như một khối lệnh đơn nhằm thực hiện một tác vụ cụ thể.
+Hữu ích cho các tác vụ lặp đi lặp laị.
+Hỗ trợ các biến do người dùng khai báo, các điều kiện thực thi và các đặc trưng khác
+Ưu điểm: Thực thi tiền biên dịch, Tăng tính bảo mật, Giảm thiểu lưu thông trong mô hình client-server, Khả năng tái sử dụng
+
+A stored function is an executable database object with SQL procedural code
+A stored function is often called a User Defined Functions (UDF) or just a function
+A function can not modify or change anything in the database by executing INSERT, UPDATE or DELETE statements
+The code to call stored functions is similar to built-in functions
+
+Sự khác nhau giữa Thủ tục và Hàm
+Thủ tục: Trả về nhiều kết quả, Tham số đầu ra và đầu vào, Không thể sử dụng trong mệnh đề SELECT, Có thể gọi functions, Có thể không trả về kết quả, Đọc và sửa dữ liệu INSERT, UPDATE, DELETE và có thể sử dụng Transaction
+Hàm:
+Trả về một giá trị, Chỉ có tham số đầu vào, Có thể sử dụng trong mệnh đề SELECT, Hàm không thể gọi được thủ tục, Hàm luôn trả về giá trị, hàm chỉ đọc dữ liệu và sử dụng được trong mệnh đề select, không sử dụng được transaction
+
+
+Stored procedures:
+Returns many value
+Input and output parameters
+Can not be used in SELECT
+Can call functions
+May not return value
+Read and Modify data
+INSERT,UPDATE, DELETE AND SELECT
+Transaction Management
+
+Stored functions:
+Return only one value
+Only input parameters
+Can be used in select
+Function can not call stored procedures
+Must return a value
+Reads only data
+Allows only SELECT
+No Transaction Management
+
+There are four different types of the stored programs: stored procedures, stored function, trigger and event
+The major advantage of stored procedure is transaction management and performance
+The major advantage of stored function is that it can be used in different clause of the SELECT statement
+
+Triggers
+A trigger is a block of code that is executed automatically when DML operations like INSERT, UPDATE or DELETE
+Are executed
+Trigger execution is often called trigger firing
+Trigger must be created with for each row clause as it creates a row level trigger firing for each row
+
+Trigger là một khối lệnh được thực hiện tự động khi một trong ba câu lệnh INSERT, UPDATE hoặc DELETE được thực hiện.
+
+Events
+
+Event là một khối lệnh được thực hiện dựa trên một lịch trình định sẵn.
+An event is a block of code that is executed automatically according to event scheduler
+Event execution is often called event firing
+An event can be a one time event as well recurring event
+The primary reasons to use event to do various maintenance tasks related to the table
+
+A trigger fires automatically when DML operations like insert, update and delete are executed
+There a two different types of triggers: before trigger and after trigger
+An event fires automatically according to the event schedule
+There are two different types of events: one time event and recurring event
+
+Mysql backup and recovery
+Database backup with mysqldump
+Database restore with mysql
+Export import with mysql workbench
+
+Sao lưu và phục hồi cơ sở dữ liệu: có thể dùng mysqldump để sao lưu cơ sở dữ liệu và mysql để phục hồi cơ sở dữ liệu
+Hoặc cũng có thể dùng Mysql Worbench để export và import cơ sở dữ liệu.
+
+Mysql indexing for performance
+Types of indexs;
+InnoDB and MyISAM
+B-Tree Index
+Clustered Index
+Buiding secondaty Index B -tree
+Hash index
+Other index type
+
+
+Indexes improve query performance greatly in most of the cases
+Indexes reduce the random IO of the storage system by converting it to sequential IO whenever possible
+Indexes improve performance by avoiding sorting, using temporary tables and reducing additional network traffic
+
+Index là một bảng tra cứu đặc biệt mà Database Search Engine có thể sử dụng để tăng thời gian truy vấn dữ liệu.
+Phân loại chỉ mục:
+B-Tree Index:
+Dữ liệu được tổ chức và lưu trữ theo dạng cây (tree) tức là có root, branch, leaf. Giá trị các node được tổ chức tăng dần từ trái qua phải.
+Thích hợp cho tìm kiếm giá trị nằm trong khoảng nào đó. VD điểm từ 5-9
+Hash Index: Dữ liệu được tổ chức theo dạng key-value và được liên kết với nhau. Sử dụng cho toán tử = và <>
+
+
+Optimizing data access:
+Do not retrieve the data which is not useful to the application
+Avoid using * in SELECT statement
+It is always a good idea to write new queries as well modify the existing ones instead of writing query which retrieve more than required now
+
+Performance Optimization by Practical Query Tuning
+You can use EXPLAIN key words to check the execution plan of query
+Avoid using <> operator in query as it ignores index created on table
+Use UNION ALL in place of UNION if you do not care about duplicate data
+Alway test your query with real data on your development server before deploying on production
+
+	

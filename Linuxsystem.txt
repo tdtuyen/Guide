@@ -1,0 +1,84 @@
+Thư mục gốc trong linux: /
+Thư mục boot chứa nhân hệ điều hành
+Thư mục etc chứa các file cấu hình
+Thư mục root chứa thông tin người dùng root
+Thư mục home chứa thông tin người dùng
+
+pwd print name of current/working directory
+cd change directory
+cd .. back to parent directory
+cd ../..
+cd - trở lại thư mục vừa rời đi
+ls list directory
+ls -l -a liệt kê các file ẩn .file trong linux
+
+đường đẫn tuyệt đối /etc/sysconfig
+đường dẫn tương đối httpd tham chiếu đến thư mục hiện hành
+
+một số thủ thuật:
+dùng mũi tên lên xuống
+ctrl c để huỷ lệnh
+clear để xoá màn hình
+tab để gõ lệnh nhanh
+history để xem lịch sử và dùng !50 để thực hiện lại lệnh 50 trong history
+
+mkdir namefolder tạo thự mục
+mkdir -p parent/folder để tạo cả thư mục cha
+
+touch file tạo file
+rm file xoá file
+rm -r folder để xoá thư mục
+rm -rf folder để xoá thư mục mà không cần hỏi Y 
+cảnh báo rm -rf / xoá thư mục gốc của cả hệ thống
+
+cp nguồn gốc để copy file
+cp -rv để copy thư mục v là hiện quá trình
+
+mv dùng để di chuyển hoặc đổi tên
+
+lệnh xem nội dung file
+cat
+more
+less / tìm kiếm n next
+head -n 5
+tail -n 5
+
+tìm kiếm trong hệ thống
+find /folder -name -size -ctime
+
+thông tin user /etc/passwd
+thông tin mật khẩu /etc/shadow
+useradd username tạo người dùng
+passwd username tạo mật khẩu người dùng
+userdel username xoá người dùng
+su username switch username đăng nhập người dùng
+
+Thay đổi quyền của file r read w write x execute
+Một file sở hữu bởi 3 đối tượng là user owner u, group owner g, other o
+Thay đổi quyền bằng lệnh chmod
+chmod u+x abc.txt thêm quyền x cho user owner
+chmod g+wx abc.txt thêm quyền wx cho group
+chmod o+rwe abc.txt thêm quyền rwx cho other
+chmod u-rwx,g-rwx,o-rwx abc.txt xoá tất cả quyền
+read =4 write =2 execute =1
+chmod 775 abc.txt thì u=4+2+1 g = 4+2+1 o =4+1
+chmod 000 abc.txt loại hết quyền
+
+Chuyển hướng dữ liệu ra chuẩn và lỗi vào file > tênfile cần ghi dữ liệu ra chuẩn
+
+Lệnh đường ống command1 | command2 | command3
+
+Lệnh lọc dữ liệu Grep và cut trong file
+grep lấy dữ liệu theo dòng và cut theo cột'
+grep -in findword /etc/folder
+cut -d' ' -f1 tênfile
+
+Làm việc với tiến trình prosess PID
+ps để liệt kê các tiến trình
+kill PID để xoá tiến trình
+
+
+xem cấu hình cpu linux
+cat /proc/cpuinfo
+cat /proc/meminfo
+df -h
