@@ -1,3 +1,35 @@
+Làm theo hướng dẫn
+https://docs.djangoproject.com/en/4.0/intro/tutorial02/
+
+3 bước để thay đổi models.py
+Thay đổi mô hình của bạn (trong models.py).
+Chạy để tạo di chuyển cho những thay đổi đópython manage.py makemigrations
+Chạy để áp dụng những thay đổi đó cho cơ sở dữ liệu.python manage.py migrate
+
+python manage.py createsuperuser
+Python manage.py runserver
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Tao project tren Pycharm: Pycharm tự tạo môi trường env cho ứng dụng
 # Install the lastest Django relesea
 python -m pip install django

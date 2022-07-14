@@ -1,0 +1,54 @@
+useState();
+useEffect()
+useRef(); dùng với dữ liệu tham chiếu
+useMemo(): tránh trường hợp rerender không cần thiết và luôn dùng với useCallback();
+
+
+Cac ham array
+
+Array.map ( function, index, origin_array ) nhận vào 3 tham số và trả về 1 mảng mới với số phần tử bằng mảng gốc và phần tử chính là kết quả return của callback function truyền vào làm đối số. Thường áp dụng vào render giao diện cho người dùng.
+array.map(function(currentValue, index, arr), thisValue)
+map() creates a new array from calling a function for every array element.
+map() calls a function once for each element in an array.
+map() does not execute the function for empty elements.
+map() does not change the original array.
+
+
+Array.reduce ( function( biến lưu trữ, current value )) trả về giá trị của biến lưu trữ.
+array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+The reduce() method executes a reducer function for array element.
+The reduce() method returns a single value: the function's accumulated result.
+The reduce() method does not execute the function for empty array elements.
+The reduce() method does not change the original array.
+
+array.filter(function(currentValue, index, arr), thisValue)
+The filter() method creates a new array filled with elements that pass a test provided by a function.
+The filter() method does not execute the function for empty elements.
+The filter() method does not change the original array.
+
+array.every(function(currentValue, index, arr), thisValue)
+The every() method executes a function for each array element.
+The every() method returns true if the function returns true for all elements.
+The every() method returns false if the function returns false for one element.
+The every() method does not execute the function for empty elements.
+The every() method does not change the original array
+
+var has a function scope, not a block scope.
+
+let has a block scope.
+
+const has a block scope.
+
+Destructuring array, object: Phân rã mảng ES6 const [car, truck, suv] = vehicles_arr;
+
+Spread Operator Toán tử ... copy 2 mảng thành 1 mảng mới 
+const numbersOne = [1, 2, 3];
+const numbersTwo = [4, 5, 6];
+const numbersCombined = [...numbersOne, ...numbersTwo];
+
+const numbers = [1, 2, 3, 4, 5, 6];
+const [one, two, ...rest] = numbers;
+restParameters: ...rest
+Destructuring arrays: phan ra mang ket hop voi restParamenters [  ]
+Destructuring objects:phan ra mang ({  })
+Spread syntax
